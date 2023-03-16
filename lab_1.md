@@ -1,4 +1,5 @@
 ## Лабораторная работа 1
+Код для первого графика
 ```
 #include <iostream>
 #include <chrono>
