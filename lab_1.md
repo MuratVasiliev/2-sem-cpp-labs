@@ -1,5 +1,5 @@
 ## Лабораторная работа 1
-'''
+```
 #include <iostream>
 #include <chrono>
 #include <stdlib.h>
@@ -70,5 +70,5 @@ int main(){
     fin << endl;
     }}
     }
-'''
+```
 ![This is an image](/Lab_1_subfiles/G1.png)
