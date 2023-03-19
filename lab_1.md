@@ -76,6 +76,7 @@ int main(){
 ```
 Графики для худшего и случайного случая для линейного поиска.
 ![This is an image](/Lab_1_subfiles/G1.png)
+
 Код для бинарного поиска:
 ```
 #include <iostream>
