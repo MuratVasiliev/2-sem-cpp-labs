@@ -18,5 +18,3 @@ plt.ylabel('T')
 plt.plot(x, y, 'bo')
 #plt.tick_params (left= False, labelleft=False)
 plt.show()
-
-

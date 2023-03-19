@@ -39,7 +39,7 @@ bool binpoisk(int* mas, int N, int a){
 
 
 int main(){
-    int h=40000;
+    int h=60000;
     int shag=500;
     int ite=1;
     int MAX=100000;
