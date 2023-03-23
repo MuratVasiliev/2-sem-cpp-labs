@@ -41,7 +41,7 @@ int main(){
     long long count=0;
     for (k=0; k<h; k++){
     auto start = chrono::steady_clock::now();
-    linpoisk(arr, N, GetRandomNumber(N));
+    linpoisk(arr, N, -1);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
