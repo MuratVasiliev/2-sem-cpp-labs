@@ -25,8 +25,8 @@ bool sumpoisk(int* mas, int N, int a){
 }
 
 int main(){
-    int h=1000;
-    int shag=5000;
+    int h=100;
+    int shag=1000;
     int ite=1;
     int MAX=100000;
     int k = (ite)*(MAX-100)/shag;
