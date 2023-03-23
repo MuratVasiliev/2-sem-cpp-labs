@@ -141,6 +141,7 @@ int main(){
 Графики для бинарного поиска в худшем случае:
 
 ![This is an image](/Lab_1_subfiles/G2.5.png)
+
 И для случайного случая:
 
 ![This is an image](/Lab_1_subfiles/G2.png)
