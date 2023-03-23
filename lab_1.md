@@ -225,3 +225,4 @@ int main(){
 ```
 И график:
 ![This is an image](/Lab_1_subfiles/G3.png)
+....
