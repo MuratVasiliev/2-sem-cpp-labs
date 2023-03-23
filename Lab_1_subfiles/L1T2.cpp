@@ -39,7 +39,7 @@ bool binpoisk(int* mas, int N, int a){
 
 
 int main(){
-    int h=60000;
+    int h=90000;
     int shag=500;
     int ite=1;
     int MAX=100000;
@@ -55,7 +55,7 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
-    long long p=GetRandomNumber(N);
+    long long p=-1;
     auto start = chrono::steady_clock::now();
     binpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
