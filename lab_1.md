@@ -20,32 +20,18 @@ int GetRandomNumber(int N)
 	int num = dstr(rng);
     return num;
 }
-
-
-bool binpoisk(int* mas, int N, int a){
-    int midd = 0;
-    int right=N-1;
-    int left=0;
-	while (1)
-	{
-		midd = (left + right) / 2;
-		
-		if (a < mas[midd])       
-			right = midd - 1;      
-		else if (a > mas[midd])  
-			left = midd + 1;	   
-		else                       
-			return true;           
-
-		if (left > right)          
-			return false;
-	}
+bool linpoisk(int* mas, int N, int a){
+    for(int i=0; i<N; i++){
+        if (mas[i]==a){
+            return true;
+        }
     }
-
+    return false;
+}
 
 int main(){
-    int h=40000;
-    int shag=500;
+    int h=10000;
+    int shag=1000;
     int ite=1;
     int MAX=100000;
     int k = (ite)*(MAX-100)/shag;
@@ -60,8 +46,9 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
-    binpoisk(arr, N, GetRandomNumber(N));
+    linpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
@@ -106,7 +93,7 @@ bool binpoisk(int* mas, int N, int a){
 	{
 		midd = (left + right) / 2;
 		
-		if (a < mas[midd])       
+		if (a < mas[midd]) 
 			right = midd - 1;      
 		else if (a > mas[midd])  
 			left = midd + 1;	   
@@ -136,8 +123,9 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
-    binpoisk(arr, N, GetRandomNumber(N));
+    binpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
@@ -209,8 +197,9 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    long long p=GetRandomNumber(2*N);
     auto start = chrono::steady_clock::now();
-    sumpoisk(arr, N, GetRandomNumber(2*N));
+    sumpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
