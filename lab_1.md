@@ -155,7 +155,7 @@ int main(){
 ## Сумма двух
 Далее я написал программу для поиска суммы двух за O(N). За O(N^2) я тоже написал, но у меня комп очень долго ее выполнял. 
 Код для посика суммы:
-`
+``
 #include <iostream>
 #include <chrono>
 #include <stdlib.h>
@@ -222,6 +222,6 @@ int main(){
     fin << endl;
     }}
     }
-    `
+    ``
     И график:
     ![This is an image](/Lab_1_subfiles/G3.png)
