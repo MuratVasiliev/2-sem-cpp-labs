@@ -151,6 +151,7 @@ int main(){
     }
 ```
 Графики для бинарного поиска:
+
 ![This is an image](/Lab_1_subfiles/G2.png)
 ## Сумма двух
 
