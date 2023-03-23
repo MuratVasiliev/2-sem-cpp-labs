@@ -21,6 +21,7 @@ bool linpoisk(int* mas, int N, int a){
             return true;
         }
     }
+    return false;
 }
 
 int main(){
@@ -40,8 +41,9 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
-    linpoisk(arr, N, -1);
+    linpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();

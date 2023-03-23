@@ -51,8 +51,9 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    long long p=GetRandomNumber(2*N);
     auto start = chrono::steady_clock::now();
-    sumpoisk(arr, N, GetRandomNumber(2*N));
+    sumpoisk(arr, N, p);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
