@@ -4,8 +4,9 @@
 #include <time.h>
 #include <fstream>
 #include <random>
-
 using namespace std;
+
+long long per=0;
 unsigned seed = 1001;
 default_random_engine rng(seed);
 int GetRandomNumber(int N)
@@ -13,12 +14,6 @@ int GetRandomNumber(int N)
     uniform_int_distribution<unsigned> dstr(0, N);
 	int num = dstr(rng);
     return num;
-}
-void swap(int xp, int yp)
-{
-    int temp = xp;
-    xp = yp;
-    yp = temp;
 }
 
 void bubble_sort(int* arr, int const begin_idx, int const end_idx){
@@ -28,35 +23,32 @@ void bubble_sort(int* arr, int const begin_idx, int const end_idx){
     for (int i = begin_idx; i < end_idx; i++){
         for (int j = begin_idx; j < end_idx - i; j++){
             if (arr[j] > arr[j + 1]){
-                swap(arr[j], arr[j + 1]);
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
                 VV=true;
+                per ++;
                 }}}}
 }
-void forward_step(int *arr, int const begin_idx, int const end_idx) {
-    for (int i = begin_idx; i < end_idx; ++i) {
-        if (arr[i] > arr[i + 1]) {
-            swap(arr[i], arr[i + 1]);
-        }
-    }
-}
+void change_order(int *arr, int n, int gap){
+    for (int i = 0; i < n-gap; i++) {
+        if (arr[i] > arr[i + gap]) {
+            int temp = arr[i];
+            arr[i] = arr[i+gap];
+            arr[i+gap] = temp;
+            per++;
+}}}
 
-void backward_step(int *arr, int const begin_idx, int const end_idx) {
-    for (int i = end_idx; i > begin_idx; --i) {
-        if (arr[i] < arr[i - 1]) {
-            swap(arr[i], arr[i - 1]);
+void ras_sort(int *arr, int n){
+    int gap = n;
+    while (gap != 1) {
+        gap = gap/2;
+        if (gap < 1) {
+            gap = 1;
         }
+        change_order(arr, n, gap);
     }
-}
-
-void shaker_sort(int *arr, int const size) {
-    int left = 0;
-    int right = size - 1;
-    while (left < right ) {
-        forward_step(arr, left, right);
-        --right;
-        backward_step(arr, left, right);
-        ++left;
-    }
+    bubble_sort(arr, 0, n);
 }
 
 int main(){
@@ -76,9 +68,10 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
+    per=0;
     long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
-    bubble_sort(arr, 0, N);
+    ras_sort(arr, N);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
