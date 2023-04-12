@@ -6,7 +6,6 @@
 #include <random>
 using namespace std;
 
-long long per=0;
 unsigned seed = 1001;
 default_random_engine rng(seed);
 int GetRandomNumber(int N)
@@ -27,32 +26,27 @@ void bubble_sort(int* arr, int const begin_idx, int const end_idx){
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
                 VV=true;
-                per ++;
                 }}}}
 }
-void change_order(int *arr, int n, int gap){
-    for (int i = 0; i < n-gap; i++) {
-        if (arr[i] > arr[i + gap]) {
-            int temp = arr[i];
-            arr[i] = arr[i+gap];
-            arr[i+gap] = temp;
-            per++;
-}}}
+void change_order(int *arr, int n, int gap, int i){
+    if (arr[i] > arr[i + gap]) {
+        int temp = arr[i];
+        arr[i] = arr[i+gap];
+        arr[i+gap] = temp;
+}}
 
 void ras_sort(int *arr, int n){
-    int gap = n;
-    while (gap != 1) {
-        gap = gap/2;
-        if (gap < 1) {
-            gap = 1;
-        }
-        change_order(arr, n, gap);
+    int gap = n/2;
+    while(gap > 2){
+        for(int i = 0; i < n - gap; i+=gap){
+            change_order(arr, n, gap, i);}
+        gap /= 2;
     }
     bubble_sort(arr, 0, n);
 }
 
 int main(){
-    int h=8;
+    int h=6;
     int shag=1000;
     int ite=1;
     int MAX=30000;
@@ -68,7 +62,6 @@ int main(){
         }
     long long count=0;
     for (k=0; k<h; k++){
-    per=0;
     long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
     ras_sort(arr, N);

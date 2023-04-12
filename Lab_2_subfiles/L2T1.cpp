@@ -22,15 +22,11 @@ void swap(int xp, int yp)
 }
 
 void bubble_sort(int* arr, int const begin_idx, int const end_idx){
-    bool VV=true;
-    while(VV){
-    VV=false;
     for (int i = begin_idx; i < end_idx; i++){
         for (int j = begin_idx; j < end_idx - i; j++){
             if (arr[j] > arr[j + 1]){
                 swap(arr[j], arr[j + 1]);
-                VV=true;
-                }}}}
+                }}}
 }
 void forward_step(int *arr, int const begin_idx, int const end_idx) {
     for (int i = begin_idx; i < end_idx; ++i) {
@@ -78,7 +74,7 @@ int main(){
     for (k=0; k<h; k++){
     long long p=GetRandomNumber(N);
     auto start = chrono::steady_clock::now();
-    bubble_sort(arr, 0, N);
+    shaker_sort(arr, N);
     auto stop = chrono::steady_clock::now();
     auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
     count=count+time_span.count();
