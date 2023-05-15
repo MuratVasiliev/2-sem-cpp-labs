@@ -96,5 +96,8 @@ int main(){
 ```
 Я построил график времени работы от числа элементов для сортировки пузырьком:
 
-![This is an image](/Lab_1_subfiles/G_1.png)
+![This is an image](/Lab_2_subfiles/G_1.png)
 
+И для шейкерной сортировки
+
+![This is an image](/Lab_2_subfiles/G_2.png)
