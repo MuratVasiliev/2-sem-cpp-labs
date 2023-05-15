@@ -14,8 +14,8 @@ for i in range(A-1):
     x.append(math.log(b))
 #for i in range(A):
 #    print(x[i], " " ,y[i])
-plt.xlabel('N')
-plt.ylabel('T')
+plt.xlabel('ln N')
+plt.ylabel('ln T')
 plt.plot(x, y, 'bo')
 #plt.tick_params (left= False, labelleft=False)
 plt.show()

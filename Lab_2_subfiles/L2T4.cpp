@@ -46,7 +46,7 @@ void shell1_sort(int *arr, int n){
 }
 
 int main(){
-    int h=6;
+    int h=500;
     float c=0;
     int shag=1000;
     int ite=1;
