@@ -22,6 +22,7 @@ int max_i(int N){
     }
     return i-1;
 }
+
 void vstavka_sort(int* arr, int n) {
     int i, key, j;
     for (i=1; i<n; i++) {
@@ -52,7 +53,7 @@ void shell2_sort(int *arr, int n){
         y-=1;
         gap=pow(2, y)-1;
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, n);
 }
 
 int main(){

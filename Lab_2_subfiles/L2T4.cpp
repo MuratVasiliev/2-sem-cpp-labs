@@ -42,7 +42,7 @@ void shell1_sort(int *arr, int n){
             change_order(arr, n, gap, i);}
         gap /= 2;
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, N)
 }
 
 int main(){

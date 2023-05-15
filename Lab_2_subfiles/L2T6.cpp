@@ -27,6 +27,7 @@ int max_fib(int N){
     }
     return y-1;
 }
+
 void vstavka_sort(int* arr, int n) {
     int i, key, j;
     for (i=1; i<n; i++) {
@@ -57,7 +58,7 @@ void shell3_sort(int *arr, int n){
         y-=1;
         gap=fib(y);
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, n);
 }
 
 int main(){
