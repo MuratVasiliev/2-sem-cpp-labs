@@ -325,7 +325,7 @@ void shell1_sort(int *arr, int n){
             change_order(arr, n, gap, i);}
         gap /= 2;
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, n);
 }
 
 int main(){
@@ -420,7 +420,7 @@ void shell2_sort(int *arr, int n){
         y-=1;
         gap=pow(2, y)-1;
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, n);
 }
 
 int main(){
@@ -520,7 +520,7 @@ void shell3_sort(int *arr, int n){
         y-=1;
         gap=fib(y);
     }
-    vstavka_sort(arr, n);
+    //vstavka_sort(arr, n);
 }
 
 int main(){
