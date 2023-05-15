@@ -68,7 +68,7 @@ int main(){
         for(int i=0;i<N; i++){
             arr[i]=N-1-i;
         }
-    fin <<  ras_sort(arr, N);
+    fin << ras_sort(arr, N);
     fin << endl;
     fin << N;
     fin << endl;
