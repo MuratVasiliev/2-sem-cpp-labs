@@ -22,7 +22,7 @@ int max_i(int N){
     }
     return i-1;
 }
-bool bubble_sort(int *arr, int n){
+void bubble_sort(int *arr, int n){
 for (unsigned int i = 0; i < n-1; i++) {
         bool swapped = false;
         for (unsigned int j = 0; j < n - i - 1; j++) {
@@ -44,7 +44,7 @@ void change_order(int *arr, int n, int gap, int i){
         arr[i+gap] = temp;
 }}
 
-bool shell2_sort(int *arr, int n){
+void shell2_sort(int *arr, int n){
     int y=max_i(n);
     int gap = pow(2, y)-1;
     while(y > 0){

@@ -27,7 +27,7 @@ int max_fib(int N){
     }
     return y-1;
 }
-bool bubble_sort(int *arr, int n){
+void bubble_sort(int *arr, int n){
 for (unsigned int i = 0; i < n-1; i++) {
         bool swapped = false;
         for (unsigned int j = 0; j < n - i - 1; j++) {
@@ -49,7 +49,7 @@ void change_order(int *arr, int n, int gap, int i){
         arr[i+gap] = temp;
 }}
 
-bool shell3_sort(int *arr, int n){
+void shell3_sort(int *arr, int n){
     int y=max_fib(n);
     int gap = fib(y);
     while(y > 1){
