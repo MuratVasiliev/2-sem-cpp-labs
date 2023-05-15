@@ -27,19 +27,18 @@ int max_fib(int N){
     }
     return y-1;
 }
-void bubble_sort(int *arr, int n){
-for (unsigned int i = 0; i < n-1; i++) {
-        bool swapped = false;
-        for (unsigned int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j+1]) {
-                swap(arr[j], arr[j+1]);
-                swapped = true;
-            }
+void vstavka_sort(int* arr, int n) {
+    int i, key, j;
+    for (i=1; i<n; i++) {
+        key = arr[i];
+        j=i-1;
+        while (j>=0 && arr[j]>key) {
+            arr[j+1]=arr[j];
+            j=j-1;
         }
-        if (!swapped) {
-            break;
-        }
-    }}
+        arr[j+1]=key;
+    }
+}
 
 
 void change_order(int *arr, int n, int gap, int i){
@@ -58,7 +57,7 @@ void shell3_sort(int *arr, int n){
         y-=1;
         gap=fib(y);
     }
-    //bubble_sort(arr, n);
+    vstavka_sort(arr, n);
 }
 
 int main(){
