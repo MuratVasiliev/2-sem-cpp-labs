@@ -14,20 +14,21 @@ int GetRandomNumber(int N)
 	int num = dstr(rng);
     return num;
 }
-void swap(int xp, int yp)
-{
-    int temp = xp;
-    xp = yp;
-    yp = temp;
-}
 
-void bubble_sort(int* arr, int const begin_idx, int const end_idx){
-    for (int i = begin_idx; i < end_idx; i++){
-        for (int j = begin_idx; j < end_idx - i; j++){
-            if (arr[j] > arr[j + 1]){
-                swap(arr[j], arr[j + 1]);
-                }}}
-}
+
+void bubble_sort(int *arr, int n){
+for (unsigned int i = 0; i < n-1; i++) {
+        bool swapped = false;
+        for (unsigned int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j+1]) {
+                swap(arr[j], arr[j+1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }}
 void forward_step(int *arr, int const begin_idx, int const end_idx) {
     for (int i = begin_idx; i < end_idx; ++i) {
         if (arr[i] > arr[i + 1]) {

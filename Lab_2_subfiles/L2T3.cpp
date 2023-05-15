@@ -15,19 +15,23 @@ int GetRandomNumber(int N)
     return num;
 }
 
-bool bubble_sort(int *arr, int n){
+int bubble_sort(int *arr, int n, int per){
 for (unsigned int i = 0; i < n-1; i++) {
         bool swapped = false;
         for (unsigned int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j+1]) {
                 swap(arr[j], arr[j+1]);
                 swapped = true;
+                per+=1;
             }
         }
         if (!swapped) {
             break;
         }
-    }}
+    }
+    return per;}
+
+
 void change_order(int *arr, int n, int gap, int i){
     if (arr[i]>arr[i+gap]) {
         int temp = arr[i];
@@ -35,14 +39,17 @@ void change_order(int *arr, int n, int gap, int i){
         arr[i+gap] = temp;
 }}
 
-bool ras_sort(int *arr, int n){
+int ras_sort(int *arr, int n){
+    int per=0;
     int gap = n/2;
     while(gap > 2){
         for(int i = 0; i < n - gap; i+=gap){
-            change_order(arr, n, gap, i);}
+            change_order(arr, n, gap, i);
+            per+=1;}
         gap /= 2;
+
     }
-    bubble_sort(arr, n);
+    bubble_sort(arr, n, per);
 }
 
 int main(){
@@ -61,19 +68,7 @@ int main(){
         for(int i=0;i<N; i++){
             arr[i]=N-1-i;
         }
-    long long count=0;
-    c=0;
-    for (k=0; k<h; k++){
-    long long p=GetRandomNumber(N);
-    auto start = chrono::steady_clock::now();
-    ras_sort(arr, N);
-    auto stop = chrono::steady_clock::now();
-    auto time_span = chrono::duration_cast < chrono::nanoseconds> (stop - start);
-    count=count+time_span.count();
-    }
-    int time = count/h; 
-    int z=c/h;
-    fin << time;
+    fin <<  ras_sort(arr, N);
     fin << endl;
     fin << N;
     fin << endl;
