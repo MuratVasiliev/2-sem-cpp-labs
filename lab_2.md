@@ -124,7 +124,7 @@ int GetRandomNumber(int N)
     return num;
 }
 
-bool bubble_sort(int *arr, int n){
+void bubble_sort(int *arr, int n){
 for (unsigned int i = 0; i < n-1; i++) {
         bool swapped = false;
         for (unsigned int j = 0; j < n - i - 1; j++) {
@@ -144,7 +144,7 @@ void change_order(int *arr, int n, int gap, int i){
         arr[i+gap] = temp;
 }}
 
-bool ras_sort(int *arr, int n){
+void ras_sort(int *arr, int n){
     int gap = n/2;
     while(gap > 2){
         for(int i = 0; i < n - gap; i+=gap){
@@ -277,3 +277,6 @@ int main(){
 И график количества перестановок от N:
 
 ![This is an image](/Lab_2_subfiles/G_4.png)
+
+## Сортировка Шелла
+Сортировка Шелла с первой данной последовательностью шагов это и есть сортировка расческой, которая была мною реализована в прошлом пункте. Реализую вторую последовательность:
