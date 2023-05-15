@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 import matplotlib.ticker as ticker
 
 x=[]
@@ -8,9 +9,9 @@ f=open("numbers.txt", 'r')
 A=int(f.readline())
 for i in range(A-1):
     a=int(f.readline())
-    y.append(a)
+    y.append(math.log(a))
     b=int(f.readline())
-    x.append(b)
+    x.append(math.log(b))
 #for i in range(A):
 #    print(x[i], " " ,y[i])
 plt.xlabel('N')
